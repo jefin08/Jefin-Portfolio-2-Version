@@ -175,6 +175,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroParallax = document.getElementById('hero-parallax');
     let ticking = false;
 
+    // Enable parallax transition after entrance animation completes
+    if (heroParallax) {
+        heroParallax.addEventListener('animationend', (e) => {
+            if (e.animationName === 'phantomMaterialize') {
+                // Clear animation fill so parallax inline transforms take effect
+                heroParallax.style.animation = 'none';
+                heroParallax.style.opacity = '1';
+                heroParallax.style.clipPath = 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)';
+                heroParallax.style.transform = 'perspective(2500px) rotateY(0deg) translateX(0) scale(1)';
+                heroParallax.style.filter = 'blur(0) grayscale(0)';
+                heroParallax.classList.add('parallax-ready');
+            }
+        });
+    }
+
     function updateParallax() {
         if (!heroParallax || window.innerWidth <= 768) return; // Disable parallax on mobile
         const scrollY = window.scrollY;

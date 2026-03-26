@@ -1023,18 +1023,51 @@ body.loaded .hero-bg-shapes {
     align-items: flex-start;
     /* Ensure top stays flush */
     opacity: 0;
-    transform: perspective(2500px) rotateY(-20deg) translateX(50px) scale(0.9);
-    filter: blur(10px) grayscale(100%);
-    transition:
-        transform 2s cubic-bezier(0.22, 1, 0.36, 1) 1.2s,
-        opacity 1.8s ease 1.2s,
-        filter 2.5s ease 1.2s;
+    clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+    transform: perspective(2500px) scale(1.3);
+    filter: brightness(5) blur(30px) contrast(3);
 }
 
 body.loaded .hero-image-wrapper {
-    opacity: 1;
-    transform: perspective(2500px) rotateY(0deg) translateX(0) scale(1);
-    filter: blur(0) grayscale(0);
+    animation: phantomMaterialize 3s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards;
+}
+
+/* Phantom Materialization — Dimensional slit → light leak → ghost flash → settle */
+@keyframes phantomMaterialize {
+    0% {
+        opacity: 0;
+        clip-path: polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);
+        transform: perspective(2500px) scale(1.3);
+        filter: brightness(5) blur(30px) contrast(3);
+    }
+
+    /* Slit widens into a skewed parallelogram with 3D rotation */
+    15% {
+        clip-path: polygon(35% 0%, 65% 0%, 68% 100%, 32% 100%);
+        transform: perspective(2500px) rotateY(8deg) rotateZ(-0.5deg) scale(1.2) translateX(-20px);
+        filter: brightness(2) blur(8px) contrast(1.8);
+    }
+
+    /* Full reveal */
+    30% {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        transform: perspective(2500px) rotateY(2deg) scale(1.04);
+        filter: brightness(1.3) blur(0px) contrast(1.3);
+    }
+
+    /* Micro-wobble overshoot */
+    70% {
+        transform: perspective(2500px) rotateY(1deg) scale(0.995);
+        filter: brightness(1) blur(0px) contrast(1);
+    }
+
+    /* Final settle */
+    100% {
+        opacity: 1;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        transform: perspective(2500px) rotateY(0deg) translateX(0) scale(1);
+        filter: blur(0) grayscale(0);
+    }
 }
 
 .moody-portrait {
@@ -1898,7 +1931,7 @@ body.loaded .hero-image-wrapper {
     font-size: clamp(1.5rem, 5vw, 5rem);
     color: var(--text-white);
     letter-spacing: 2px;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: none;
     transition: color 0.3s ease;
     display: inline-block;
@@ -2288,6 +2321,9 @@ body.loaded .hero-image-wrapper {
 /* --- Hero Parallax --- */
 .hero-image-wrapper {
     will-change: transform;
+}
+
+.hero-image-wrapper.parallax-ready {
     transition: transform 0.05s linear;
 }
 
@@ -2757,6 +2793,10 @@ body.light-mode .btt-line-wrapper {
         height: 120px;
         bottom: -20px;
         right: 20px;
+    }
+
+    .badge-center {
+        font-size: 2.3rem;
     }
 }
 
@@ -3237,8 +3277,10 @@ body.light-mode .shape-6::after {
    MOBILE SCROLL PERFORMANCE OPTIMIZATIONS
    =================================================== */
 @media (max-width: 768px) {
+
     /* Enable smooth momentum scrolling on iOS */
-    html, body {
+    html,
+    body {
         -webkit-overflow-scrolling: touch;
     }
 
