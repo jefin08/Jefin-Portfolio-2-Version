@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jefin | Editorial Noir</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Aubrey&family=Caesar+Dressing&family=Gabriela&family=Inter:wght@400;600;800&family=Jockey+One&family=Original+Surfer&family=Sofadi+One&family=Tac+One&family=Uncial+Antiqua&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" rel="stylesheet" />
+</head>
+
+<body class="editorial-noir">
+    <!-- Elevated Split Loader -->
+    <div id="loader" class="loader-overlay split-loader">
+        <div class="split-loader-left">
+            <div class="split-text-wrap">
+                <h1 class="split-name">JEFIN JOBI</h1>
+                <p class="split-role">FRONTEND DEVELOPER / DESIGNER / PHOTOGRAPHER</p>
+            </div>
+            
+            <div class="split-status-area">
+                <div class="split-percent-wrap">
+                    <span class="loading-percent" id="loading-percent">00</span><span class="percent-symbol">%</span>
+                </div>
+                
+                <!-- Voice Assistant Wave Loader (Extended) -->
+                <div class="voice-wave-loader">
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="split-loader-right">
+            <div class="split-cutout-wrap">
+                <img src="assets/Avatar3.png" alt="Jefin Jobi" class="split-cutout">
+                <div class="cutout-backdrop"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noise Texture Overlay -->
+    <!-- Top Nav (Header) -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <span class="label-text" style="display: flex; align-items: center;">JEfin Jobi<span
+                    class="top-red-square"></span></span>
+        </div>
+        <div class="top-bar-right">
+            <div class="status-wrap">
+                <span class="status-dot"></span>
+                <span class="label-text">BASED IN KOCHI, IND</span>
+            </div>
+            
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+
+            <span class="label-text time-tracker" id="clock">00:00:00</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+        </div>
+        <div class="hero-image-wrapper" id="hero-parallax">
+            <img src="assets/avatar2.png" alt="Jefin Moody Portrait" class="moody-portrait">
+        </div>
+        <div class="hero-text-wrapper" data-scroll="clip">
+            <h1 class="hero-name">JEFIN<span class="red-period"></span></h1>
+            <p class="hero-sub" data-scroll="clip">
+                <span class="sub-item"><span class="sub-bullet">•</span> FRONTEND</span>
+                <span class="sub-item"><span class="sub-bullet">•</span> DESIGNER</span>
+                <span class="sub-item"><span class="sub-bullet">•</span> WEB CRAFTSMAN</span>
+                <span class="sub-item"><span class="sub-bullet">•</span> PHOTOGRAPHER</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Tech Stack Bar -->
+    <div class="tech-stack-bar">
+        <div class="marquee-content">
+            <div class="tech-item"><i class="devicon-html5-plain"></i> HTML</div>
+            <div class="tech-item"><i class="devicon-css3-plain"></i> CSS</div>
+            <div class="tech-item"><i class="devicon-javascript-plain"></i> JS</div>
+            <div class="tech-item"><i class="devicon-tailwindcss-plain"></i> TAILWIND</div>
+            <div class="tech-item"><i class="devicon-bootstrap-plain"></i> BOOTSTRAP</div>
+            <div class="tech-item"><i class="devicon-python-plain"></i> PYTHON</div>
+            <div class="tech-item"><i class="devicon-django-plain"></i> DJANGO</div>
+            <div class="tech-item"><i class="devicon-java-plain"></i> JAVA</div>
+            <div class="tech-item"><i class="devicon-mysql-plain"></i> MYSQL</div>
+            <div class="tech-item"><i class="devicon-oracle-original"></i> ORACLE</div>
+            <div class="tech-item"><i class="devicon-postgresql-plain"></i> POSTGRESQL</div>
+            <div class="tech-item"><i class="devicon-git-plain"></i> GIT</div>
+            <!-- Continuous scrolling and smooth moving -->
+            <div class="tech-item"><i class="devicon-html5-plain"></i> HTML</div>
+            <div class="tech-item"><i class="devicon-css3-plain"></i> CSS</div>
+            <div class="tech-item"><i class="devicon-javascript-plain"></i> JS</div>
+            <div class="tech-item"><i class="devicon-tailwindcss-plain"></i> TAILWIND</div>
+            <div class="tech-item"><i class="devicon-bootstrap-plain"></i> BOOTSTRAP</div>
+            <div class="tech-item"><i class="devicon-python-plain"></i> PYTHON</div>
+            <div class="tech-item"><i class="devicon-django-plain"></i> DJANGO</div>
+            <div class="tech-item"><i class="devicon-java-plain"></i> JAVA</div>
+            <div class="tech-item"><i class="devicon-mysql-plain"></i> MYSQL</div>
+            <div class="tech-item"><i class="devicon-oracle-original"></i> ORACLE</div>
+            <div class="tech-item"><i class="devicon-postgresql-plain"></i> POSTGRESQL</div>
+            <div class="tech-item"><i class="devicon-git-plain"></i> GIT</div>
+        </div>
+    </div>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section" id="expertise">
+        <h2 class="section-title" data-scroll="left"><span class="line-under-text">EXPERTISE</span></h2>
+        <div class="expertise-list">
+
+            <div class="exp-row" data-scroll="tilt" style="--stagger: 0">
+                <div class="exp-left">
+                    <span class="exp-index">01</span>
+                    <h3 class="exp-title">FRONTEND DEVELOPMENT</h3>
+                </div>
+                <div class="exp-right">
+                    <p class="exp-desc">Creating responsive, interactive, and beautifully crafted user interfaces with
+                        precise focus on modern web aesthetics and performance.</p>
+                </div>
+            </div>
+
+            <div class="exp-row" data-scroll="tilt" style="--stagger: 1">
+                <div class="exp-left">
+                    <span class="exp-index">02</span>
+                    <h3 class="exp-title">BACKEND DEVELOPMENT</h3>
+                </div>
+                <div class="exp-right">
+                    <p class="exp-desc">Building scalable APIs, robust logic architectures, and efficient data pipelines
+                        using modern backend technologies.</p>
+                </div>
+            </div>
+
+            <div class="exp-row" data-scroll="tilt" style="--stagger: 2">
+                <div class="exp-left">
+                    <span class="exp-index">03</span>
+                    <h3 class="exp-title">DESIGNING (CANVA, FIGMA)</h3>
+                </div>
+                <div class="exp-right">
+                    <p class="exp-desc">Crafting elegant UI/UX designs, comprehensive wireframes, and engaging visual,
+                        brand-aligned assets.</p>
+                </div>
+            </div>
+
+            <div class="exp-row" data-scroll="tilt" style="--stagger: 3">
+                <div class="exp-left">
+                    <span class="exp-index">04</span>
+                    <h3 class="exp-title">DATABASE DESIGNING</h3>
+                </div>
+                <div class="exp-right">
+                    <p class="exp-desc">Architecting highly optimized, logical schemas and scalable data structures
+                        across relational databases like PostgreSQL and MySQL.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="projects-section" id="works">
+        <h2 class="section-title" data-scroll="left">THE FORGE</h2>
+        <div class="forge-grid">
+            <!-- Constructo Project -->
+            <article class="forge-item img-card" data-scroll="flip" style="--stagger: 0"
+                data-scatter="assets/Project 1/Screenshot 2026-02-13 142601.png,assets/Project 1/Screenshot 2026-02-13 142728.png,assets/Project 1/Screenshot 2026-02-13 142548.png">
+                <div class="forge-img-wrap">
+                    <img src="assets/Project 1/Screenshot 2026-02-13 142548.png" alt="Constructo Preview"
+                        class="clean-img">
+                </div>
+                <div class="forge-caption">
+                    <div class="forge-title-row">
+                        <h4 class="forge-name">CONSTRUCTO</h4>
+                        <span class="forge-meta-year">2024</span>
+                    </div>
+                    <span class="forge-cat">E-COMMERCE BUILD</span>
+                </div>
+            </article>
+
+            <!-- Beta Care HMS Project -->
+            <article class="forge-item img-card" data-scroll="flip" style="--stagger: 1"
+                data-scatter="assets/Project 2/Screenshot 2026-03-12 141215.png,assets/Project 2/Screenshot 2026-03-12 141233.png,assets/Project 2/Screenshot 2026-03-12 141403.png">
+                <div class="forge-img-wrap">
+                    <img src="assets/Project 2/Screenshot 2026-03-12 141215.png" alt="Beta Care HMS Preview"
+                        class="clean-img">
+                </div>
+                <div class="forge-caption">
+                    <div class="forge-title-row">
+                        <h4 class="forge-name">BETA CARE HMS</h4>
+                        <span class="forge-meta-year">2026</span>
+                    </div>
+                    <span class="forge-cat">DJANGO & MYSQL</span>
+                </div>
+            </article>
+
+            <!-- EMS Project -->
+            <article class="forge-item img-card" data-scroll="flip" style="--stagger: 2"
+                data-scatter="assets/Project 3/Screenshot 2026-03-06 113413.png,assets/Project 3/Screenshot 2026-03-06 113621.png,assets/Project 3/Screenshot 2026-03-03 125630.png">
+                <div class="forge-img-wrap">
+                    <img src="assets/Project 3/Screenshot 2026-03-06 113123.png" alt="EMS Preview" class="clean-img">
+                </div>
+                <div class="forge-caption">
+                    <div class="forge-title-row">
+                        <h4 class="forge-name">EMS</h4>
+                        <span class="forge-meta-year">2026</span>
+                    </div>
+                    <span class="forge-cat">JAVA & MYSQL</span>
+                </div>
+            </article>
+
+            <!-- HAR Lab Project -->
+            <article class="forge-item img-card" data-scroll="flip" style="--stagger: 3"
+                data-scatter="assets/Project 4/Screenshot 2026-03-06 174501.png,assets/Project 4/Screenshot 2026-03-06 174518.png,assets/Project 4/Screenshot 2026-03-06 174531.png">
+                <div class="forge-img-wrap">
+                    <img src="assets/Project 4/Screenshot 2026-03-06 174314.png" alt="HAR Lab Preview"
+                        class="clean-img">
+                </div>
+                <div class="forge-caption">
+                    <div class="forge-title-row">
+                        <h4 class="forge-name">HAR LAB</h4>
+                        <span class="forge-meta-year">2026</span>
+                    </div>
+                    <span class="forge-cat">AI & DEEP LEARNING</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <h2 class="section-title" data-scroll="left">ACHIEVEMENTS</h2>
+        <div class="achievements-list">
+
+            <div class="achv-row" data-scroll="blinds" style="--stagger: 0">
+                <div class="achv-left">
+                    <span class="achv-index">01</span>
+                    <h3 class="achv-title">MSc CS DA</h3>
+                </div>
+                <div class="achv-right">
+                    <span class="achv-award">Master's in Computer Science with Data Analytics</span>
+                    <span class="achv-year">2025 – ongoing</span>
+                </div>
+            </div>
+
+            <div class="achv-row" data-scroll="blinds" style="--stagger: 1">
+                <div class="achv-left">
+                    <span class="achv-index">02</span>
+                    <h3 class="achv-title">CSTAR COORDINATOR</h3>
+                </div>
+                <div class="achv-right">
+                    <span class="achv-award">Technical Lead · Rajagiri College</span>
+                    <span class="achv-year">2025 – ongoing</span>
+                </div>
+            </div>
+
+            <div class="achv-row" data-scroll="blinds" style="--stagger: 2">
+                <div class="achv-left">
+                    <span class="achv-index">03</span>
+                    <h3 class="achv-title">IBM CERTIFIED</h3>
+                </div>
+                <div class="achv-right">
+                    <span class="achv-award">Python for Data Analytics · IBM</span>
+                    <span class="achv-year">2025</span>
+                </div>
+            </div>
+
+            <div class="achv-row" data-scroll="blinds" style="--stagger: 3">
+                <div class="achv-left">
+                    <span class="achv-index">04</span>
+                    <h3 class="achv-title">BACHELOR'S DEGREE</h3>
+                </div>
+                <div class="achv-right">
+                    <span class="achv-award">Bachelor of Computer Application</span>
+                    <span class="achv-year">2022 – 2025</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about-me-section" id="about-me">
+        <div class="about-grid" id="about-3d" data-scroll="scale">
+            <div class="about-img-wrap">
+                <img src="assets/avatar.png" alt="Jefin Jobi" class="about-portrait">
+            </div>
+            <div class="about-text-wrap">
+                <h2 class="about-headline">THE MAN BEHIND THE LOGIC.</h2>
+                <div class="about-desc">
+                    <p>I build frontend interfaces, design UIs, develop backend systems, and shoot photography. I am
+                        currently pursuing an MSc in Computer Science with Data Analytics and serving as the CSTAR
+                        Coordinator at Rajagiri College.</p>
+                    <p>My focus is simple: clean code, efficient databases, and striking design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="massive-footer" id="contact">
+        <h2 class="footer-headline" data-scroll="blur">LET'S CREATE SOMETHING AMAZING</h2>
+
+        <div class="footer-bottom">
+            <div class="footer-col">
+                <h4 class="footer-col-title">NETWORK</h4>
+                <ul class="social-list">
+                    <li><a href="https://www.linkedin.com/in/jefin08" target="_blank">LINKEDIN</a></li>
+                    <li><a href="https://github.com/jefin08" target="_blank">GITHUB</a></li>
+                    <li><a href="assets/Jefin Jobi.pdf" target="_blank">RESUME</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">INDEX</h4>
+                <ul class="footer-nav-list">
+                    <li><a href="#about-me">PERSONA</a></li>
+                    <li><a href="#expertise">CAPABILITIES</a></li>
+                    <li><a href="#works">THE FORGE</a></li>
+                    <li><a href="#achievements">RECORDS</a></li>
+                </ul>
+            </div>
+
+            <a href="mailto:jefinjobi11@gmail.com" class="big-email">JEFINJOBI11@GMAIL.COM</a>
+        </div>
+
+        <div class="spinning-badge">
+            <svg viewBox="0 0 200 200" class="rotating-text-outer">
+                <defs>
+                    <path id="circlePathOuter" d="M 100, 100 m -89, 0 a 89,89 0 1,1 178,0 a 89,89 0 1,1 -178,0"></path>
+                </defs>
+                <text>
+                    <textPath href="#circlePathOuter" startOffset="0%" textLength="559" lengthAdjust="spacingAndGlyphs">• PRODUCT ARCHITECT • WEB CRAFTSMAN • PHOTOGRAPHER </textPath>
+                </text>
+            </svg>
+            <svg viewBox="0 0 200 200" class="rotating-text-inner">
+                <defs>
+                    <path id="circlePathInner" d="M 100, 100 m -65, 0 a 65,65 0 1,1 130,0 a 65,65 0 1,1 -130,0"></path>
+                </defs>
+                <text>
+                    <textPath href="#circlePathInner" startOffset="0%" textLength="408" lengthAdjust="spacingAndGlyphs">• FRONTEND • PYTHON • DESIGNER </textPath>
+                </text>
+            </svg>
+            <div class="badge-center">JJ</div>
+        </div>
+    </footer>
+
+    <!-- Floating Nav Bar -->
+    <nav class="floating-nav">
+        <div class="nav-links">
+            <a href="#about-me">PERSONA</a>
+            <a href="#expertise">CAPABILITIES</a>
+            <a href="#works">THE FORGE</a>
+            <a href="#achievements">RECORDS</a>
+        </div>
+        <a href="#contact" class="lets-talk-btn">
+            <img src="assets/avatar2.png" alt="Avatar" class="nav-avatar">
+            <span class="lets-talk-text">+ LET'S TALK</span>
+        </a>
+    </nav>
+
+    <!-- Scatter Popup Gallery -->
+    <div class="scatter-gallery" id="scatter-gallery">
+        <img class="scatter-img s-img-1" src="" alt="preview">
+        <img class="scatter-img s-img-2" src="" alt="preview">
+        <img class="scatter-img s-img-3" src="" alt="preview">
+    </div>
+
+    <!-- Unique Vertical Back to Top -->
+    <div class="desktop-nav-side">
+        <div class="custom-scrollbar-container">
+            <div class="custom-scrollbar-track">
+                <div class="custom-scrollbar-thumb"></div>
+            </div>
+        </div>
+
+        <div class="btt-unique" id="back-to-top">
+            <svg viewBox="0 0 24 24" fill="none" class="btt-arrow" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 15L12 9L18 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="btt-line-wrapper">
+                <div class="btt-red-line"></div>
+            </div>
+            <span class="btt-text">ASCEND</span>
+        </div>
+    </div>
+
+
+    <!-- Mobile Scroll Tracker (Left Side) -->
+    <div class="mobile-scroll-container">
+        <div class="mobile-scroll-track">
+            <div class="mobile-scroll-thumb"></div>
+        </div>
+    </div>
+
+    <!-- Mobile FAB Nav (Visible only on Mobile) -->
+
+    <div class="mobile-nav-container">
+        <div class="mobile-nav-menu" id="mobile-menu">
+            <a href="#about-me" class="mobile-menu-item">PERSONA</a>
+            <a href="#expertise" class="mobile-menu-item">CAPABILITIES</a>
+            <a href="#works" class="mobile-menu-item">THE FORGE</a>
+            <a href="#achievements" class="mobile-menu-item">RECORDS</a>
+            <a href="#contact" class="mobile-menu-item">LET'S TALK</a>
+        </div>
+        
+        <div class="mobile-nav-btt" id="mobile-btt" aria-label="Back to Top">
+            <svg viewBox="0 0 24 24" fill="none" class="btt-arrow" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 15L12 9L18 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="btt-line-wrapper">
+                <div class="btt-red-line"></div>
+            </div>
+            <span class="btt-text">ASCEND</span>
+        </div>
+
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Menu">
+            <div class="toggle-icon">
+                <div class="symbol-plus"></div>
+            </div>
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
