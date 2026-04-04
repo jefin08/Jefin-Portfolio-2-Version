@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollElements = document.querySelectorAll('[data-scroll]');
 
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) document.body.classList.add('is-touch-device');
     const observerMargin = window.innerHeight > 800 ? '0px 0px -100px 0px' : '0px 0px -40px 0px';
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -107,10 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 const el = entry.target;
                 // Only trigger for interactive rows/cards
-                if (el.classList.contains('exp-row') || 
-                    el.classList.contains('forge-item') || 
+                if (el.classList.contains('exp-row') ||
+                    el.classList.contains('forge-item') ||
                     el.classList.contains('achv-row')) {
-                    
+
                     if (entry.isIntersecting) {
                         el.classList.add('active-scroll');
                     } else {
@@ -146,14 +147,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!(isTouchDevice && window.innerWidth < 1024)) {
         let lastPos = window.pageYOffset;
         let skewValue = 0;
-        
+
         function updateSkew() {
             const newPos = window.pageYOffset;
             const diff = newPos - lastPos;
-            
+
             const targetSkew = Math.max(Math.min(diff * 0.1, 3), -3);
             skewValue += (targetSkew - skewValue) * 0.1;
-            
+
             if (Math.abs(skewValue) > 0.01 || Math.abs(targetSkew) > 0.01) {
                 document.documentElement.style.setProperty('--scroll-skew', `${skewValue}deg`);
             } else {
@@ -361,7 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutObserver.observe(aboutSection);
     }
 
-    // =========================================================
     // 7. SPINNING BADGE LETTER-BY-LETTER HOVER
     // =========================================================
     const textPaths = document.querySelectorAll('.spinning-badge textPath');
@@ -602,5 +602,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // =========================================================
+    // 13. CERTIFICATION INTERACTIVE VIEWER (Single-Click Only)
+    // =========================================================
+    const certCards = document.querySelectorAll('.cert-card');
+
+    certCards.forEach(card => {
+        const viewCircle = card.querySelector('.view-circle');
+
+        // Floating 'VIEW' Circle Logic (Desktop only)
+        if (!isTouchDevice) {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                if (viewCircle) {
+                    viewCircle.style.left = `${x}px`;
+                    viewCircle.style.top = `${y}px`;
+                }
+            });
+        }
+
+        card.addEventListener('click', () => {
+            // SINGLE CLICK ACTION: Small internal reveal
+            certCards.forEach(c => { if (c !== card) c.classList.remove('active'); });
+            card.classList.toggle('active');
+        });
+
+        // Auto-close small view when unhovering
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('active');
+        });
+    });
+
+    // =========================================================
+    // 14. LOGIC ENGINE WORKFLOW PROGRESS
+    // =========================================================
+    const logicTrack = document.querySelector('.logic-track');
+    const logicProgress = document.querySelector('.logic-progress');
+    const workflowSection = document.querySelector('.workflow-section');
+
+    if (logicTrack && logicProgress && workflowSection) {
+        window.addEventListener('scroll', () => {
+            const rect = workflowSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // Start filling when the top of the section enters the screen
+            const startFill = windowHeight * 0.85; 
+            const totalWorkHeight = rect.height;
+            
+            // Percentage of the section that has scrolled past the trigger point
+            const progress = (startFill - rect.top) / totalWorkHeight;
+            
+            const fillPercent = Math.max(0, Math.min(progress * 130, 100)); // 1.3x multiplier for faster fill
+            logicProgress.style.height = `${fillPercent}%`;
+        }, { passive: true });
+    }
 });
+
 
