@@ -2038,19 +2038,20 @@ body.light-mode .moody-portrait {
     font-weight: 400;
     letter-spacing: 2px;
     pointer-events: none;
+    overflow: visible;
     /* Allows mouse to pass through the dual canvas boxes */
 }
 
 /* Outer Ring - Clockwise Rotation */
 .rotating-text-outer {
     animation: spin 20s linear infinite;
-    font-size: 10.5px;
+    font-size: 13px;
 }
 
 /* Inner Ring - Counter-Clockwise Rotation */
 .rotating-text-inner {
     animation: spin-reverse 15s linear infinite;
-    font-size: 10.5px;
+    font-size: 10px;
 }
 
 /* Center Badge Text */
@@ -2086,9 +2087,11 @@ body.light-mode .moody-portrait {
 
 /* Letter Hover Effects */
 .hover-char {
-    transition: fill 0.1s ease, stroke 0.1s ease, stroke-width 0.1s ease, text-shadow 0.1s ease, baseline-shift 0.1s ease;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), font-size 0.2s ease, fill 0.1s ease, stroke 0.1s ease, stroke-width 0.1s ease, text-shadow 0.1s ease, baseline-shift 0.1s ease;
     pointer-events: auto;
     cursor: default;
+    transform-origin: center;
+    transform-box: fill-box;
 }
 
 /* Floating Nav Bar */
@@ -4319,19 +4322,20 @@ body.light-mode .mobile-social-bubble {
     font-weight: 400;
     letter-spacing: 2px;
     pointer-events: none;
+    overflow: visible;
     /* Allows mouse to pass through the dual canvas boxes */
 }
 
 /* Outer Ring - Clockwise Rotation */
 .rotating-text-outer {
     animation: spin 20s linear infinite;
-    font-size: 10.5px;
+    font-size: 11.3px;
 }
 
 /* Inner Ring - Counter-Clockwise Rotation */
 .rotating-text-inner {
     animation: spin-reverse 15s linear infinite;
-    font-size: 10.5px;
+    font-size: 8.7px;
 }
 
 /* Center Badge Text */
@@ -4367,9 +4371,33 @@ body.light-mode .mobile-social-bubble {
 
 /* Letter Hover Effects */
 .hover-char {
-    transition: fill 0.1s ease, stroke 0.1s ease, stroke-width 0.1s ease, text-shadow 0.1s ease, baseline-shift 0.1s ease;
+    transition: font-size 0.2s ease, fill 0.1s ease, stroke 0.1s ease, stroke-width 0.1s ease, text-shadow 0.1s ease, baseline-shift 0.1s ease;
     pointer-events: auto;
     cursor: default;
+}
+
+.hover-char:hover {
+    fill: #ffffff !important;
+    stroke: #ffffff;
+    stroke-width: 0.4px;
+    baseline-shift: 2.5px;
+    font-size: 1.35em;
+    transform: perspective(600px) rotateX(20deg) rotateY(15deg);
+    text-shadow:
+        0.5px 0.5px 0px #aa0000,
+        1.5px 1.5px 0px #550000,
+        3px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .hover-char:hover {
+    fill: #ffffff !important;
+    stroke: #8b0000;
+    stroke-width: 0.4px;
+    font-size: 1.35em;
+    transform: perspective(600px) rotateX(20deg) rotateY(15deg);
+    text-shadow:
+        1px 1px 0px rgba(0, 0, 0, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile Adjustments for Spinning Badge */
@@ -4382,6 +4410,6 @@ body.light-mode .mobile-social-bubble {
     }
 
     .badge-center {
-        font-size: 2.5rem;
+        font-size: 1.4rem;
     }
 }
