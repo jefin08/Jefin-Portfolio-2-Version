@@ -2070,6 +2070,7 @@ body.light-mode .moody-portrait {
 
 .badge-center:hover {
     color: var(--text-white);
+    text-shadow: 0 0 20px var(--accent-red);
 }
 
 /* Animations */
@@ -2092,6 +2093,12 @@ body.light-mode .moody-portrait {
     cursor: default;
     transform-origin: center;
     transform-box: fill-box;
+}
+
+.hover-char:hover {
+    fill: var(--text-white);
+    transform: scale(1.5) translateY(-2px);
+    text-shadow: 0 0 10px var(--accent-red);
 }
 
 /* Floating Nav Bar */
